@@ -17,8 +17,6 @@ With web sockets connected, our browser/app and a server will be able to talk t
 ## Socket.io Setup
 ### Server-Side: Node.js + Express.js
  To get started we will need to install the *express* package using npm and create a quick express server.
- The only difference in a normal express boilerplate and our express boilerplate with socket.io is we need to either save our ```app.listen( )``` to a variable called 'server', or require in the built-in Node.js module called HTTP, link on the ```createServer()``` method and save that to a variable called 'server'.
-In this instance I will be useing the first of the two options: saving the ```app.listen( )``` into a variable
 
 ```javascript
     const express = require('express');
@@ -30,12 +28,12 @@ In this instance I will be useing the first of the two options: saving the ```ap
         console.log(`Listening on ${PORT}`)
     });
 ```
+The only difference in a normal express boilerplate and our express boilerplate with socket.io is we need to either save our ```app.listen( )``` to a variable called 'server', or require in the built-in Node.js module called HTTP, link on the ```createServer()``` method and save that to a variable called 'server'.
+In this instance I will be useing the first of the two options: saving the ```app.listen( )``` into a variable
+
 
 The next thing we need to do is connect socket.io to our express server
-    - First, we install socket.io using npm:
-    ```npm install socket.io --save```
-    - Next require socket.io into our server file from the socket.io library and save this into a variable called **io**
-    - This library is a function that we can chain onto the end of the require and pass it our app.listen() variable to have the sockets constantly listening on our server.
+    
 ```javascript
 const express = require('express');
 const PORT = process.env.PORT || 8080;
@@ -48,4 +46,24 @@ const PORT = process.env.PORT || 8080;
 
 //Socket Setup
 io = require("socket.io")(server);
+```
+- First, we install socket.io using npm:
+    ```npm install socket.io --save```
+    - Then require socket.io into our server file from the socket.io library and save this into a variable called **io**
+    - This library is a function that we can chain onto the end of the require and pass it our app.listen() variable to have the sockets constantly listening on our server.
+    
+That is the set up on the server-side, now lets look at the setup for the client-side
+
+### Client-Side: React.js
+First, we need to import the socket.io library. 
+    -   Where our package.json lives for create-react-app we will need to add socket.io-client.
+    - ```npm install socket.io-client```
+    - In the component we want to use sockets import in the socket.io library. For this tutorial, we will import it into our **Chat** Component. 
+    ```
+    import ioClient from 'socket.io-client';
+    ```
+- To establish our connection, we will invoke our ioClient function and pass in our server endpoint.
+    - Save this to a variable called socket so we can use later to listen or emit messages.
+```javascript
+    const socket = ioClient('http://localhost:8080');
 ```
