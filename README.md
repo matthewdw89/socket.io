@@ -29,7 +29,23 @@ In this instance I will be useing the first of the two options: saving the ```ap
     const server = app.listen(PORT, () => {
         console.log(`Listening on ${PORT}`)
     });
+```
 
-    //Middleware
-    app.use(express.static('public'));
-    ```
+The next thing we need to do is connect socket.io to our express server
+    - First, we install socket.io using npm:
+    ```npm install socket.io --save```
+    - Next require socket.io into our server file from the socket.io library and save this into a variable called **io**
+    - This library is a function that we can chain onto the end of the require and pass it our app.listen() variable to have the sockets constantly listening on our server.
+```javascript
+const express = require('express');
+const PORT = process.env.PORT || 8080;
+
+//App Setup
+    const app = express();
+    const server = app.listen(PORT, () => {
+        console.log(`Listening on ${PORT}`)
+    });
+
+//Socket Setup
+io = require("socket.io")(server);
+```
