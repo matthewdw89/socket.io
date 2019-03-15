@@ -19,3 +19,17 @@ With web sockets connected, our browser/app and a server will be able to talk t
  To get started we will need to install the *express* package using npm and create a quick express server.
  The only difference in a normal express boilerplate and our express boilerplate with socket.io is we need to either save our ```app.listen( )``` to a variable called 'server', or require in the built-in Node.js module called HTTP, link on the ```createServer()``` method and save that to a variable called 'server'.
 In this instance I will be useing the first of the two options: saving the ```app.listen( )``` into a variable
+
+```javascript
+    const express = require('express');
+    const PORT = process.env.PORT || 8080;
+
+    //App Setup
+    const app = express();
+    const server = app.listen(PORT, () => {
+        console.log(`Listening on ${PORT}`)
+    });
+
+    //Middleware
+    app.use(express.static('public'));
+    ```
