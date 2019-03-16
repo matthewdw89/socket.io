@@ -56,14 +56,18 @@ For now, we are going to swap over to the client-side to set it up there before 
 
 ### Client-Side: React.js
 First, we need to import the socket.io library. 
-  -   Where our package.json lives for create-react-app we will need to add socket.io-client.
-  - ```npm install socket.io-client```
-  - In the component, we want to use sockets import in the socket.io library. For this tutorial, we will import it into our **Chat** Component. 
+-   Where our package.json lives for create-react-app we will need to add socket.io-client.
+- ```npm install socket.io-client```
+
 ```javascript
     import ioClient from 'socket.io-client';
-```
-- To establish our connection, we will invoke our ioClient function and pass in our server endpoint.
-    - Save this to a variable called socket so we can use later to listen or emit messages.
-```javascript
     const socket = ioClient('http://localhost:8080');
 ```
+- In the component, we want to use sockets import in the socket.io library. For this tutorial, we will import it into a component named **Chat**. 
+- To establish our connection, we will invoke our ioClient function and pass in our server endpoint.
+    - Save this to a variable called socket so we can use later to listen or send messages.
+    
+Now that we have Socket.io set up on both the server-side and the client-side we can start to use it.
+
+## Socket.io Usage
+
