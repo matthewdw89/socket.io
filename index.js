@@ -25,14 +25,17 @@ io = require("socket.io")(server),
 
 io.on('connection', (socket) => {
   console.log(`new connection: ${socket.id}`)
+  // This is where socket is listening 'on' the 'start' keyword from the client
   socket.on('start', () => {
     io.emit('receiveNewMessage', messageList)
   })
 
+  // This is where our socket is listening for 'sendNewMessage' from the client. It is then taking
+  //  the data being sent to it and pushing it to our messageList array and sending that back
   socket.on('sendNewMessage', (msg)=>{
     messageList.push(msg)
     io.emit('receiveNewMessage', messageList)
   })
 
-  socket.on('disconnect', () => console.log("Client disconnected"))
+  socket.on('disconnect', () => console.log(`Client disconnected: ${socket.id}`))
 })
