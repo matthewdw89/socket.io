@@ -3,6 +3,7 @@
 # dependencies
 node_modules
 .pnp
+front-end/node_modules
 
 
 # testing
