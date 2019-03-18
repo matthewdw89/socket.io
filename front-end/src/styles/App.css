@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 5rem;
+}
+
+.App-header .socket-logo {
+  -webkit-animation: Socket-logo-spin infinite 20s linear;
+          animation: Socket-logo-spin infinite 20s linear;
+  height: 25vmin;
+  pointer-events: none;
+}
+
+.chat__box {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.chat__box h2 {
+  font-size: 2rem;
+  color: white;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.chat__box .chat__messages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chat__form {
+  padding: 1rem 0;
+}
+
+.chat__form input {
+  padding: .5rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.from__me {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0.2rem;
+  background-color: cornflowerblue;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  word-break: break-all;
+}
+
+.from__me .message__body {
+  color: white;
+  font-size: 16px;
+}
+
+.from__me .message__body p {
+  margin: 0;
+}
+
+.from__me .message__details {
+  font-size: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.from__them {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 0.2rem;
+  background-color: lightgrey;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  word-wrap: break-word;
+}
+
+.from__them .message__body {
+  font-size: 16px;
+}
+
+.from__them .message__details {
+  color: white;
+  font-size: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: auto;
+}
+
+@-webkit-keyframes Socket-logo-spin {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes Socket-logo-spin {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=App.css.map */
