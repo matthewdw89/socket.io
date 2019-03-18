@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 5rem;
+
+  .socket-logo {
+    animation: Socket-logo-spin infinite 20s linear;
+    height: 25vmin;
+    pointer-events: none;
+  }
+}
+
+.chat__box{
+  width: 60vw;
+  margin: 0 auto;
+  h2 {
+    font-size: 2rem;
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 0.5rem;
+  }
+  .chat__messages{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.chat__form{
+  padding: 1rem 0;
+  input{
+    padding: .5rem 1rem;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.from__me{
+  align-self: flex-end;
+  margin: 0.2rem;
+  background-color: cornflowerblue;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  word-break: break-all;
+  .message__body{
+    color: white;
+    font-size: 16px;
+    p{
+      margin: 0;
+    }
+  }
+  .message__details{
+    font-size: 10px;
+    width: fit-content;
+    margin-left: auto;
+  }
+}
+.from__them{
+  align-self: flex-start;
+  margin: 0.2rem;
+  background-color: lightgrey;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  word-wrap: break-word;
+  .message__body{
+    font-size: 16px
+  }
+  .message__details{
+    color: white;
+    font-size: 10px;
+    width: fit-content;
+    margin-right: auto;
+  }
+}
+
+@keyframes Socket-logo-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
