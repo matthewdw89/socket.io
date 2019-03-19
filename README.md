@@ -92,7 +92,9 @@ io.on('connection', (socket) => {
  The next method provided by the socket.io library we will be looking at is **emit()**.
 
  ```javascript
+io.on('connection', (socket) => {
     socket.emit('receiveNewMessage', [...messages])
+});
 ```
 
 Like the **on()** method, This **emit()** method takes two arguments.
@@ -100,6 +102,3 @@ Like the **on()** method, This **emit()** method takes two arguments.
 - The first is the keyword that our socket is listening for on the opposite end, eg. within our **on()** method.
 - The second parameter is the data we want to send with our message.
 - **Note:** We emit messages when an action occurs from the user. We can use component lifecycle methods or functions to know when an action has occurred from the user.
-
-
-
