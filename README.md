@@ -70,4 +70,36 @@ First, we need to import the socket.io library.
 Now that we have Socket.io set up on both the server-side and the client-side we can start to use it.
 
 ## Socket.io Usage
+The first, and one of the most important, methods that we will be looking at within socket.io is **on()**
+
+```javascript
+//Socket Setup
+io = require("socket.io")(server);
+
+io.on('connection', (socket) => {
+ /*
+    - All socket connection functionality goes within this function. 
+    - The socket parameter in the callback function is the individual connection for the specific client that hit our server.  
+ */
+});
+``` 
+ The **on()** method takes two arguments: 
+ - The first being the name/keyword of the event we are listening for, taken in as a string.
+    - **Note:** This keyword directly correlates to another keyword on the sending side. We will get into that shortly.
+ - The second argument is a callback function which will be executed every time our keyword is heard. This function will have a parameter that represents the data being passed from the emit message. Within this function we can handle our data is any way necessary ie. push to an array or store it in our database
+
+
+ The next method provided by the socket.io library we will be looking at is **emit()**.
+
+ ```javascript
+    socket.emit('receiveNewMessage', [...messages])
+```
+
+Like the **on()** method, This **emit()** method takes two arguments.
+   
+- The first is the keyword that our socket is listening for on the opposite end, eg. within our **on()** method.
+- The second parameter is the data we want to send with our message.
+- **Note:** We emit messages when an action occurs from the user. We can use component lifecycle methods or functions to know when an action has occurred from the user.
+
+
 
